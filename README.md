@@ -1,4 +1,4 @@
-# Glass Act: Autonomous Formulation Optimizer
+# The Autonomous Formulation Optimizer
 
 *A closed-loop workflow that proposes epoxy formulations, checks their chemistry, evaluates molecular-dynamics results, and learns which formulation to try next.*
 
