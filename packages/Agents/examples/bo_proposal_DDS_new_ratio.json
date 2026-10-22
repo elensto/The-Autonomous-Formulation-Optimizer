@@ -1,0 +1,1 @@
+{"request_id":"DDS_RATIO_STRETCH","mode":"formulation","system_id":"SYS_DDS_LIVRAGHI","formulation_id":"DGEBA_DDS_NONSTOICHIOMETRIC_TEST","components":{"resin_id":"R001","hardener_id":"H007","molecule_counts":{"DGEBA":100,"DDS":45}},"conversion_pct":85,"target_range_C":[150,220]}

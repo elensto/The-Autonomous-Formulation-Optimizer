@@ -1,0 +1,22 @@
+{
+  "mode": "conversion",
+  "n_approved_observations": 5,
+  "n_distinct_training_points": 5,
+  "n_candidates_eligible": 2,
+  "target_C": [
+    150.0,
+    220.0
+  ],
+  "source_mode": "SYNTHETIC_DEMO_NOT_MD",
+  "gp_diagnostics": {
+    "kernel": "2.23**2 * Matern(length_scale=5.01, nu=2.5) + WhiteKernel(noise_level=2.28e-08)",
+    "log_marginal_likelihood": -2.6021893790391433,
+    "noise_sd": 0.004739680154251558,
+    "loo_rmse": 2.84958525559874,
+    "loo_std_resid_rms": 0.32179895973940487,
+    "loo_max_abs_std_resid": 0.5585886512548588
+  },
+  "status": "OK",
+  "method": "GP_target_interval_probability",
+  "n_selected": 2
+}

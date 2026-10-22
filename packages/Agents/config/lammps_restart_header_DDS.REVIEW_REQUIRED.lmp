@@ -1,0 +1,7 @@
+# REPLACE THIS FILE WITH REVIEWED DDS AMBER/GAFF RESTART SCRIPT. Never use Fan CHARMM settings.
+units real
+atom_style full
+{{READ_RESTART}}
+timestep 1.0
+thermo 1000
+thermo_style custom step temp press vol density pe

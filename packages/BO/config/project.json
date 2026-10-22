@@ -1,0 +1,35 @@
+{
+  "name": "FormulationLab DGEBA/4,4'-DDS dual-mode Tg Bayesian optimizer",
+  "origin": "Adapted from Nannan's original DGEBA/PGE/EDA Gaussian Process notebook",
+  "primary_target_tg_C": [150, 220],
+  "modes": {
+    "conversion": "Select next real, verified, pre-crosslinked DGEBA/DDS structure from the manifest; ratio fixed per campaign",
+    "composition": "Propose integer DGEBA and DDS counts and desired conversion; produce network-generation request, not an existing network"
+  },
+  "physics": {
+    "DGEBA_epoxy_per_molecule": 2,
+    "DDS_reactive_amine_h_per_molecule": 4,
+    "formula": "amine_H_to_epoxide_equivalent_ratio = 4*n_DDS/(2*n_DGEBA)",
+    "baseline_DGEBA_molecules": 100,
+    "baseline_DDS_molecules": 50,
+    "baseline_ratio": 1.0,
+    "total_atoms_baseline": 6350,
+    "baseline_conversion_achieved_pilot_percent": 8,
+    "campaign_conversion_target_percent": 90,
+    "conversion_definition": "epoxides reacted / starting epoxide groups; count actual reactions and compare network connectivity; not a placeholder target",
+    "conversion_limit_note": "If ratio < 1, epoxy conversion cannot exceed the available reactive amine-H fraction, assuming only ideal epoxy-amine reactions; not a guarantee of network gelation",
+    "force_field": "Livraghi block chemistry, AMBER conventions (lj/cut/coul/long; special_bonds amber), not the D230 CHARMM setup",
+    "structure_source": "Published Livraghi DGEBA/DDS uncured 100:50 configuration 1, Carbono pilot; no cured 90% output available in this package"
+  },
+  "policies": {
+    "real_training_source_type": "real_classical_MD",
+    "approval": "physcheck_decision=ACCEPT AND bo_trainable=true AND experiment_status=completed",
+    "literature_tg_as_training": false,
+    "pilot_8percent_tg_as_training": false,
+    "unvalidated_network_proposal_as_ready_cured_structure": false,
+    "exploration_when_few_results": "greedy distance-based initial design; no GP predictions",
+    "GP_activation": "at least 4 distinct approved feature configurations, exploratory only",
+    "duplicate_rule": "do not repeat completed/in-flight candidate; in conversion mode avoid repeated conversion levels",
+    "cooling_rate_effect": "all Tg results must retain protocol and temperature units; do not mix inconsistent fidelities"
+  }
+}

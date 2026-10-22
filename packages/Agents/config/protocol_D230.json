@@ -1,0 +1,17 @@
+{
+  "protocol_id":"D230_preliminary_screen_v1",
+  "engine":"lammps",
+  "ensemble":"NPT",
+  "force_field_id":"FAN_CHARMM_REVIEWED",
+  "reviewed_by_scientist":false,
+  "template_file":"config/lammps_restart_header_D230.REVIEW_REQUIRED.lmp",
+  "temperatures_K":[573,553,533,513,493,473,453,433,413,393,373,353,333,313,293,273],
+  "timestep_fs":1.0,
+  "pressure_atm":1.0,
+  "thermostat_damp_fs":100.0,
+  "barostat_damp_fs":1000.0,
+  "equil_steps_per_T":20000,
+  "production_steps_per_T":100000,
+  "averaging_stride":100,
+  "notes":"Representative 100 ps/plateau production plus 20 ps transient; does NOT establish converged Tg. Input must be reviewed by MD scientist. Initial high-T compression not included: use equilibrated restart."
+}

@@ -1,0 +1,44 @@
+{
+  "experiment_name": "DGEBA_DDS_Tg_target_window",
+  "target": {
+    "property": "Tg",
+    "tg_min_C": 150.0,
+    "tg_max_C": 220.0
+  },
+  "composition_constraints": {
+    "resin": "DGEBA",
+    "hardener": "4,4'-DDS",
+    "epoxy_groups_per_DGEBA": 2,
+    "amine_H_per_DDS": 4,
+    "ratio_min": 0.8,
+    "ratio_max": 1.2,
+    "min_atoms": 1000,
+    "max_atoms": 20000
+  },
+  "candidate_source": "packages/Simulations/DGEBA_DDS/parallel_20261021/manifest.json",
+  "optimizer": {
+    "batch_size": 1,
+    "max_iterations": 8,
+    "min_points_for_gp": 4,
+    "seed": 42,
+    "seed_reference": {
+      "ratio": 1.0,
+      "conversion_pct": 90.0
+    }
+  },
+  "simulation": {
+    "backend": "replay",
+    "replay_results": "data/md_results_carbono.csv",
+    "slurm_batch_dir": "packages/Simulations/DGEBA_DDS/parallel_20261021",
+    "protocol": "Livraghi AMBER-style FF; cure 2x2 ns @503 K (90% of limiting reagent); NPT 2 ns @503 K; 26 plateaus 800->300 K, 50+50 ps each"
+  },
+  "post_physcheck": {
+    "max_ci95_width_C": 80.0,
+    "max_conversion_deviation_pct": 5.0,
+    "tg_plausible_range_C": [
+      0.0,
+      400.0
+    ]
+  },
+  "store_dir": "runs"
+}

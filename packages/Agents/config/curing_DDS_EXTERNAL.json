@@ -1,0 +1,13 @@
+{
+  "cure_protocol_id": "LIVRAGHI_DDS_EXTERNAL_TEAM_REVIEW_PENDING",
+  "system_id": "SYS_DDS_LIVRAGHI",
+  "backend": "external_lammps_bond_react",
+  "force_field_family": "AMBER",
+  "scientist_reviewed": false,
+  "starting_counts": {"DGEBA": 100, "DDS": 50},
+  "input_script": "raw/LIVRAGHI_DDS/TEAM_REVIEWED_cure.lmp",
+  "input_script_sha256": null,
+  "starting_structure": "raw/LIVRAGHI_DDS/TEAM_REVIEWED_start.data",
+  "starting_structure_sha256": null,
+  "notes": "TEAM MUST PROVIDE ACTUAL CARBONO-COMPATIBLE REACTION INPUT AND STARTING DATA; do not copy D230 CHARMM parameterization. Set reviewed flag and hashes after MD scientist review. This configuration is not runnable yet."
+}

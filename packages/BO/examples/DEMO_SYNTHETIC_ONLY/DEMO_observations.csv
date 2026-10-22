@@ -1,0 +1,6 @@
+observation_id,candidate_id,n_DGEBA,n_DDS,ratio,conversion_pct,tg_C,tg_se_C,physcheck_decision,bo_trainable,source_type,experiment_status
+DEMO_OBS_20,DEMO_DDS_100_50_20,100,50,1.0,20,95,4.0,ACCEPT,true,SYNTHETIC_DEMO_NOT_MD,completed
+DEMO_OBS_35,DEMO_DDS_100_50_35,100,50,1.0,35,117,4.0,ACCEPT,true,SYNTHETIC_DEMO_NOT_MD,completed
+DEMO_OBS_50,DEMO_DDS_100_50_50,100,50,1.0,50,141,4.0,ACCEPT,true,SYNTHETIC_DEMO_NOT_MD,completed
+DEMO_OBS_65,DEMO_DDS_100_50_65,100,50,1.0,65,160,4.0,ACCEPT,true,SYNTHETIC_DEMO_NOT_MD,completed
+DEMO_OBS_75,DEMO_DDS_100_50_75,100,50,1.0,75,172,4.0,ACCEPT,true,SYNTHETIC_DEMO_NOT_MD,completed

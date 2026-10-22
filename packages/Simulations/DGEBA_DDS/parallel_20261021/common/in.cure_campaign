@@ -1,0 +1,100 @@
+# Continue from exported pilot topology/velocities. Preserve published force field.
+# Two 2 ns reactive cycles at 503 K, separated by the published 800 K anneal.
+# Stop at 90% epoxy conversion, or export a non-approved budget-limited structure.
+variable epoxies index 200
+variable chunk_steps index 100000
+variable blocks index 20
+variable cycles index 2
+variable target index 90.0
+variable ramp_steps index 30000
+variable anneal_steps index 2000000
+variable postanneal_steps index 100000
+units real
+atom_style full
+boundary p p p
+bond_style harmonic
+angle_style harmonic
+dihedral_style harmonic
+pair_style lj/cut/coul/long 10.0
+pair_modify mix arithmetic
+special_bonds amber
+kspace_style pppm 1.0e-4
+neighbor 2.0 bin
+neigh_modify delay 0 every 1 check yes
+read_data data.start extra/bond/per/atom 4 extra/angle/per/atom 20 extra/dihedral/per/atom 40 extra/special/per/atom 64
+timestep 1.0
+reset_timestep 0
+compute qa all property/atom q
+compute qsum all reduce sum c_qa
+variable oh atom "type==12"
+compute noh all reduce sum v_oh
+variable alpha equal 100.0*c_noh/v_epoxies
+variable density_now equal density
+variable potential_per_atom equal pe/atoms
+molecule mol1 preTop.txt
+molecule mol2 postTop.txt
+molecule mol3 2preTop.txt
+molecule mol4 2postTop.txt
+thermo 5000
+thermo_style custom step time temp press density vol pe etotal c_qsum v_alpha
+thermo_modify flush yes
+restart 50000 checkpoint.a.restart checkpoint.b.restart
+print "# cycle block step conversion_percent net_charge_e density_g_cm3" file progress.dat
+variable cycle loop ${cycles}
+label cycle_start
+fix rx all bond/react stabilization yes grp_npt 0.5 &
+ react primary all 1 0.0 2.8 mol1 mol2 map1.txt custom_charges no stabilize_steps 60 &
+ react secondary all 1 0.0 3.1 mol3 mol4 map2.txt custom_charges no stabilize_steps 60
+fix rx_temp bond_react_MASTER_group temp/rescale 1 503.0 503.0 10.0 1.0
+fix npt grp_npt_REACT npt temp 503.0 503.0 100.0 iso 1.0 1.0 1000.0
+fix sample all ave/time 1000 1 1000 v_alpha c_qsum v_density_now v_potential_per_atom file cure_samples_${cycle}.dat
+run 0
+if "$(abs(c_qsum)) > 0.001" then "quit 2"
+if "${alpha} >= ${target}" then "jump SELF target_reached"
+variable block loop ${blocks}
+label block_start
+run ${chunk_steps}
+write_restart latest.cure.restart
+write_data latest.cure.data nofix
+print "${cycle} ${block} $(step) ${alpha} $(c_qsum) $(density)" append progress.dat
+if "$(abs(c_qsum)) > 0.001" then "quit 2"
+if "${alpha} >= ${target}" then "jump SELF target_reached"
+next block
+jump SELF block_start
+if "${cycle} == ${cycles}" then "jump SELF budget_exhausted"
+unfix sample
+unfix npt
+unfix rx_temp
+unfix rx
+# Recozimento: fonte in.anneal, sem reacoes durante esta etapa.
+fix heat all nvt temp 503.0 800.0 100.0
+run ${ramp_steps}
+unfix heat
+fix hot all npt temp 800.0 800.0 100.0 iso 1.0 1.0 1000.0
+run ${anneal_steps}
+unfix hot
+fix cool all nvt temp 800.0 503.0 100.0
+run ${ramp_steps}
+unfix cool
+fix settle all npt temp 503.0 503.0 100.0 iso 1.0 1.0 1000.0
+run ${postanneal_steps}
+unfix settle
+write_data latest.annealed.data nofix
+write_restart latest.annealed.restart
+next cycle
+jump SELF cycle_start
+label target_reached
+variable reached string true
+jump SELF finish
+label budget_exhausted
+variable reached string false
+label finish
+unfix sample
+unfix npt
+unfix rx_temp
+unfix rx
+run 0
+write_data final.cure.data nofix
+write_restart final.cure.restart
+print "${reached}" file target_reached.txt
+print "CURE_CAMPAIGN_COMPLETED target_reached=${reached} conversion=${alpha}"

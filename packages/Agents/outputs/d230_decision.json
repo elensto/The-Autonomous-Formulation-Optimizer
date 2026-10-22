@@ -1,0 +1,13 @@
+{
+  "status": "MODIFY",
+  "reason": "NO_MATCHING_VERIFIED_CONVERSION",
+  "next_action": "VERIFY_ARCHIVE_AND_MAP_CONVERSION",
+  "checks": [
+    {
+      "decision": "ACCEPT",
+      "reasons": [],
+      "warnings": [],
+      "stage": "proposal"
+    }
+  ]
+}

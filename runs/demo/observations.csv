@@ -1,0 +1,9 @@
+observation_id,candidate_id,n_DGEBA,n_DDS,ratio,conversion_pct,tg_C,tg_se_C,physcheck_decision,bo_trainable,source_type,experiment_status,iteration,formulation_id,tg_ci95_low_C,tg_ci95_high_C,target_conversion_pct,post_physcheck_reasons,job_id
+OBS_it01_D090_H050,D090_H050,90,50,1.1111111111111112,90.0,296.4,6.0,ACCEPT,true,real_classical_MD,completed,1,D090_H050,281.66,305.17,90.0,,it01_D090_H050
+OBS_it02_D100_H040,D100_H040,100,40,0.8,73.0,278.42,9.23,ACCEPT,true,real_classical_MD,completed,2,D100_H040,257.85,294.03,72.0,,it02_D100_H040
+OBS_it03_D100_H045,D100_H045,100,45,0.9,82.0,196.14,3.06,ACCEPT,true,real_classical_MD,completed,3,D100_H045,189.92,201.92,81.0,,it03_D100_H045
+OBS_it04_D100_H042,D100_H042,100,42,0.84,78.0,263.17,5.33,ACCEPT,true,real_classical_MD,completed,4,D100_H042,253.22,274.12,75.6,,it04_D100_H042
+OBS_it05_D100_H044,D100_H044,100,44,0.88,79.5,240.46,3.91,ACCEPT,true,real_classical_MD,completed,5,D100_H044,233.07,248.4,79.2,,it05_D100_H044
+OBS_it06_D100_H041,D100_H041,100,41,0.82,75.0,244.81,14.44,ACCEPT,true,real_classical_MD,completed,6,D100_H041,238.17,294.79,73.8,,it06_D100_H041
+OBS_it07_D088_H050,D088_H050,88,50,1.1363636363636365,90.341,256.19,9.0,ACCEPT,true,real_classical_MD,completed,7,D088_H050,242.26,277.53,90.0,,it07_D088_H050
+OBS_it08_D089_H050,D089_H050,89,50,1.1235955056179776,90.449,238.2,6.66,ACCEPT,true,real_classical_MD,completed,8,D089_H050,219.72,245.83,90.0,,it08_D089_H050

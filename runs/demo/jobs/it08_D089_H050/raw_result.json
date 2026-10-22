@@ -1,0 +1,12 @@
+{
+  "n_DGEBA": 89,
+  "n_DDS": 50,
+  "ratio": 1.1235955056179776,
+  "degree_of_cure": 0.904494382022472,
+  "tg_C": 238.2033893240366,
+  "tg_ci95_low_C": 219.7161926276035,
+  "tg_ci95_high_C": 245.83176445332924,
+  "in_target": "No",
+  "source": "Carbono LAMMPS classical MD campaign, final_eight_Tg.json, 2026-10-22",
+  "formulation_id": "D089_H050"
+}

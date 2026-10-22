@@ -1,0 +1,36 @@
+{
+  "finished_utc": "2026-10-22T18:50:49+00:00",
+  "backend": "replay",
+  "pool": "replay-available",
+  "target_C": [
+    150.0,
+    220.0
+  ],
+  "n_simulations_used": 8,
+  "n_bo_trainable": 8,
+  "n_in_window": 1,
+  "best": {
+    "observation_id": "OBS_it03_D100_H045",
+    "candidate_id": "D100_H045",
+    "n_DGEBA": 100,
+    "n_DDS": 45,
+    "ratio": 0.9,
+    "conversion_pct": 82.0,
+    "tg_C": 196.14,
+    "tg_se_C": 3.06,
+    "physcheck_decision": "ACCEPT",
+    "bo_trainable": "true",
+    "source_type": "real_classical_MD",
+    "experiment_status": "completed",
+    "formulation_id": "D100_H045",
+    "tg_ci95_low_C": 189.92,
+    "tg_ci95_high_C": 201.92,
+    "target_conversion_pct": 81.0,
+    "post_physcheck_reasons": "",
+    "job_id": "it03_D100_H045",
+    "iteration": 3,
+    "found_at_iteration": 3
+  },
+  "note": "Retrospective closed loop: the simulation stage replays REAL Carbono LAMMPS results (1 network realization each, cooling-rate-dependent preliminary Tg).",
+  "random_search_expected_evals_to_first_hit": 4.5
+}

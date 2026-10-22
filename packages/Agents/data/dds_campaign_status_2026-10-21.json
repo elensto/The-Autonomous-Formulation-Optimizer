@@ -1,0 +1,17 @@
+{
+ "report_date":"2026-10-21", "reported_by":"teammate", "live_scheduler_verified":false,
+ "system_id":"SYS_DDS_LIVRAGHI", "starting_counts":{"DGEBA":100,"DDS":50},
+ "reported_atoms":6350,"reported_pilot_achieved_conversion_pct":8,
+ "target_conversion_pct":90,"achieved_conversion_pct":null,
+ "jobs":[
+  {"id":"175482","role":"pilot_cure","reported_status":"COMPLETED","note":"8% in pilot"},
+  {"id":"175497","role":"full_sequence_validation","reported_status":"COMPLETED"},
+  {"id":"175498","role":"cure_to_target_90_pct","reported_status":"RUNNING"},
+  {"id":"175499","role":"property_evaluation","reported_status":"WAITING_FOR_CURING"}
+ ],
+ "status":"RUNNING","validated_bond_graph":false,
+ "charge_conservation_checked":false,"force_field_reviewed":false,"topology_reviewed":false,
+ "structure_file_sha256":null,
+ "tg_observation_approved":false,
+ "notes":"Reported snapshot, not live scheduler evidence. Pilot conversion is not a validated production Tg observation."
+}

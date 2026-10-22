@@ -1,0 +1,13 @@
+{
+  "status": "MODIFY",
+  "reason": "NO_CURED_NETWORK_FOR_FORMULATION",
+  "next_action": "REQUEST_CURING_OR_IMPORT_VALIDATED_NETWORK",
+  "checks": [
+    {
+      "decision": "ACCEPT",
+      "reasons": [],
+      "warnings": [],
+      "stage": "proposal"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+
+==============================================================================
+TARGET  Tg in [150.0, 220.0] C | backend=replay | pool=replay-available (8 formulations) | run=runs/demo
+==============================================================================
+
+==============================================================================
+ITERATION 1
+==============================================================================
+[1 BO] method=reference_seed (stoichiometric 1:1 recipe) | trained on 0 accepted MD observations
+[1 BO] propose D090_H050: DGEBA=90 DDS=50 r=1.111 cure=90.0%
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it01_D090_H050 -> COMPLETED (runs/demo/jobs/it01_D090_H050)
+[4 PARSE] Tg=296.4 C (95% CI 282-305), cure achieved=90.0% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 1 observations (1 BO-trainable)
+
+==============================================================================
+ITERATION 2
+==============================================================================
+[1 BO] method=diversity_exploration | trained on 1 accepted MD observations
+[1 BO] propose D100_H040: DGEBA=100 DDS=40 r=0.800 cure=72.0%
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it02_D100_H040 -> COMPLETED (runs/demo/jobs/it02_D100_H040)
+[4 PARSE] Tg=278.4 C (95% CI 258-294), cure achieved=73.0% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 2 observations (2 BO-trainable)
+
+==============================================================================
+ITERATION 3
+==============================================================================
+[1 BO] method=diversity_exploration | trained on 2 accepted MD observations
+[1 BO] propose D100_H045: DGEBA=100 DDS=45 r=0.900 cure=81.0%
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it03_D100_H045 -> COMPLETED (runs/demo/jobs/it03_D100_H045)
+[4 PARSE] Tg=196.1 C (95% CI 190-202), cure achieved=82.0% | post-PhysCheck ACCEPT  | IN TARGET WINDOW
+[5 STORE] 3 observations (3 BO-trainable)
+
+==============================================================================
+ITERATION 4
+==============================================================================
+[1 BO] method=diversity_exploration | trained on 3 accepted MD observations
+[1 BO] propose D100_H042: DGEBA=100 DDS=42 r=0.840 cure=75.6%
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it04_D100_H042 -> COMPLETED (runs/demo/jobs/it04_D100_H042)
+[4 PARSE] Tg=263.2 C (95% CI 253-274), cure achieved=78.0% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 4 observations (4 BO-trainable)
+
+==============================================================================
+ITERATION 5
+==============================================================================
+[1 BO] method=GP_target_interval_probability | trained on 4 accepted MD observations
+[1 BO] propose D100_H044: DGEBA=100 DDS=44 r=0.880 cure=79.2% | GP Tg=213+/-16 C, P(in window)=0.68
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it05_D100_H044 -> COMPLETED (runs/demo/jobs/it05_D100_H044)
+[4 PARSE] Tg=240.5 C (95% CI 233-248), cure achieved=79.5% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 5 observations (5 BO-trainable)
+
+==============================================================================
+ITERATION 6
+==============================================================================
+[1 BO] method=GP_target_interval_probability | trained on 5 accepted MD observations
+[1 BO] propose D100_H041: DGEBA=100 DDS=41 r=0.820 cure=73.8% | GP Tg=278+/-13 C, P(in window)=0.00
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it06_D100_H041 -> COMPLETED (runs/demo/jobs/it06_D100_H041)
+[4 PARSE] Tg=244.8 C (95% CI 238-295), cure achieved=75.0% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 6 observations (6 BO-trainable)
+
+==============================================================================
+ITERATION 7
+==============================================================================
+[1 BO] method=GP_target_interval_probability | trained on 6 accepted MD observations
+[1 BO] propose D088_H050: DGEBA=88 DDS=50 r=1.136 cure=90.0% | GP Tg=295+/-6 C, P(in window)=0.00
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it07_D088_H050 -> COMPLETED (runs/demo/jobs/it07_D088_H050)
+[4 PARSE] Tg=256.2 C (95% CI 242-278), cure achieved=90.3% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 7 observations (7 BO-trainable)
+
+==============================================================================
+ITERATION 8
+==============================================================================
+[1 BO] method=GP_target_interval_probability | trained on 7 accepted MD observations
+[1 BO] propose D089_H050: DGEBA=89 DDS=50 r=1.124 cure=90.0% | GP Tg=266+/-27 C, P(in window)=0.04
+[2 AGENT] pre-PhysCheck ACCEPT 
+[3 SIM] it08_D089_H050 -> COMPLETED (runs/demo/jobs/it08_D089_H050)
+[4 PARSE] Tg=238.2 C (95% CI 220-246), cure achieved=90.4% | post-PhysCheck ACCEPT  | outside target
+[5 STORE] 8 observations (8 BO-trainable)
+
+==============================================================================
+SUMMARY
+==============================================================================
+{
+  "finished_utc": "2026-10-22T18:50:49+00:00",
+  "backend": "replay",
+  "pool": "replay-available",
+  "target_C": [
+    150.0,
+    220.0
+  ],
+  "n_simulations_used": 8,
+  "n_bo_trainable": 8,
+  "n_in_window": 1,
+  "best": {
+    "observation_id": "OBS_it03_D100_H045",
+    "candidate_id": "D100_H045",
+    "n_DGEBA": 100,
+    "n_DDS": 45,
+    "ratio": 0.9,
+    "conversion_pct": 82.0,
+    "tg_C": 196.14,
+    "tg_se_C": 3.06,
+    "physcheck_decision": "ACCEPT",
+    "bo_trainable": "true",
+    "source_type": "real_classical_MD",
+    "experiment_status": "completed",
+    "formulation_id": "D100_H045",
+    "tg_ci95_low_C": 189.92,
+    "tg_ci95_high_C": 201.92,
+    "target_conversion_pct": 81.0,
+    "post_physcheck_reasons": "",
+    "job_id": "it03_D100_H045",
+    "iteration": 3,
+    "found_at_iteration": 3
+  },
+  "note": "Retrospective closed loop: the simulation stage replays REAL Carbono LAMMPS results (1 network realization each, cooling-rate-dependent preliminary Tg).",
+  "random_search_expected_evals_to_first_hit": 4.5
+}

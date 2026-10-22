@@ -1,0 +1,47 @@
+#map file for the second reaction
+
+4 edgeIDs
+28 equivalences
+
+InitiatorIDs
+
+10
+18
+
+EdgeIDs
+
+6
+25
+26
+28
+
+Equivalences
+
+1 26
+2 23
+3 24
+4 27
+5 25
+6 28
+7 11
+8 7
+9 12
+10 10
+11 3
+12 6
+13 8
+14 4
+15 2
+16 9
+17 21
+18 13
+19 20
+20 22
+21 15
+22 16
+23 14
+24 19
+25 18
+26 17
+27 5
+28 1

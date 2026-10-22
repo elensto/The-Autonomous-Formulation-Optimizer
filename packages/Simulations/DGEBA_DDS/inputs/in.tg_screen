@@ -1,0 +1,43 @@
+# Preliminary rate-dependent Tg screen. Only run after the NPT stationarity gate.
+variable heat_steps index 30000
+variable hold_steps index 500000
+variable plateau_equil_steps index 50000
+variable plateau_prod_steps index 50000
+units real
+atom_style full
+boundary p p p
+read_restart equilibrium.restart
+pair_style lj/cut/coul/long 10.0
+pair_modify mix arithmetic
+special_bonds amber
+kspace_style pppm 1e-4
+timestep 1.0
+variable rho equal density
+variable vspec equal 1.0/density
+variable e equal pe/atoms
+variable t equal temp
+variable p equal press
+thermo 10000
+thermo_style custom step time temp press density vol pe etotal
+thermo_modify flush yes
+fix heat all nvt temp 503.0 800.0 100.0
+run ${heat_steps}
+unfix heat
+fix hot all npt temp 800.0 800.0 100.0 iso 1.0 1.0 1000.0
+run ${hold_steps}
+unfix hot
+variable i loop 26
+label plateau
+variable setpoint equal 800.0-20.0*(v_i-1)
+fix npt all npt temp ${setpoint} ${setpoint} 100.0 iso 1.0 1.0 1000.0
+run ${plateau_equil_steps}
+fix sample all ave/time 100 1 100 v_t v_rho v_vspec v_e v_p file tg_${i}.dat
+run ${plateau_prod_steps}
+unfix sample
+unfix npt
+write_restart tg.latest.restart
+print "${i} ${setpoint}" append temperatures.dat
+next i
+jump SELF plateau
+write_data final.cooled.data
+print "TG_SCREEN_COMPLETED: 100 ps plateaus, preliminary and cooling-rate dependent"

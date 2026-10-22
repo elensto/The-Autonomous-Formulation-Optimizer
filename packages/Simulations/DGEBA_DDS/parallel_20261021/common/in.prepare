@@ -1,0 +1,61 @@
+# EXECUTION/STABILITY PILOT ONLY. Not equilibrated density, cured product, or Tg.
+# Source: Livraghi et al. 2023; small replica 1, 100 DGEBA + 50 44DDS.
+variable epoxies index 200
+variable heat_steps index 2000
+variable equil_steps index 10000
+variable cure_steps index 20000
+variable seed index 4928459
+units real
+atom_style full
+boundary p p p
+bond_style harmonic
+angle_style harmonic
+dihedral_style harmonic
+pair_style lj/cut/coul/long 10.0
+pair_modify mix arithmetic
+special_bonds amber
+kspace_style pppm 1.0e-4
+neighbor 2.0 bin
+neigh_modify delay 0 every 1 check yes
+read_data data.initial extra/atom/types 2 extra/bond/types 3 extra/angle/types 10 extra/dihedral/types 1 extra/bond/per/atom 4 extra/angle/per/atom 20 extra/dihedral/per/atom 40 extra/special/per/atom 64
+include coefficients_reaction.inc
+timestep 1.0
+compute qa all property/atom q
+compute qsum all reduce sum c_qa
+variable oh atom "type==12"
+compute noh all reduce sum v_oh
+variable cure_percent equal 100.0*c_noh/v_epoxies
+thermo 1000
+thermo_style custom step time temp press density vol pe etotal c_qsum v_cure_percent
+thermo_modify flush yes
+min_style cg
+minimize 1.0e-6 1.0e-4 2000 10000
+reset_timestep 0
+velocity all create 50.0 ${seed} mom yes rot yes dist gaussian
+fix heat all nvt temp 50.0 503.0 100.0
+run ${heat_steps}
+unfix heat
+fix eq all npt temp 503.0 503.0 100.0 iso 1.0 1.0 1000.0
+run ${equil_steps}
+unfix eq
+write_restart initial_relaxed.restart
+molecule mol1 preTop.txt
+molecule mol2 postTop.txt
+molecule mol3 2preTop.txt
+molecule mol4 2postTop.txt
+# Old update_edges charges -> modern custom_charges no: update all template charges.
+fix rx all bond/react stabilization yes grp_npt 0.5 &
+ react primary all 1 0.0 2.8 mol1 mol2 map1.txt custom_charges no stabilize_steps 60 &
+ react secondary all 1 0.0 3.1 mol3 mol4 map2.txt custom_charges no stabilize_steps 60
+fix rx_temp bond_react_MASTER_group temp/rescale 1 503.0 503.0 10.0 1.0
+fix npt grp_npt_REACT npt temp 503.0 503.0 100.0 iso 1.0 1.0 1000.0
+thermo_style custom step time temp press density vol pe etotal c_qsum v_cure_percent f_rx[1] f_rx[2]
+thermo_modify flush yes
+fix samples all ave/time 100 1 100 v_cure_percent c_qsum file pilot_reactions.dat
+restart 10000 pilot_checkpoint.*.restart
+print "PILOT_REACTIVE_TIMED_BEGIN"
+run ${cure_steps}
+print "PILOT_REACTIVE_TIMED_END"
+write_restart pilot.restart
+write_data pilot.data
+print "PILOT_COMPLETED: execution only, no equilibrium density or Tg claim"

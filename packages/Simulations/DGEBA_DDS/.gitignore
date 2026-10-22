@@ -1,0 +1,9 @@
+sources/*.zip
+sources/*.partial
+sources/*.incomplete
+sources/*.pdf
+raw/
+results/
+__pycache__/
+parallel_*/cases/*/data.initial
+parallel_*/results/

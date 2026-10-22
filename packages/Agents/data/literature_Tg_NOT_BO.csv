@@ -1,0 +1,6 @@
+reference_id,system_id,chemistry,measurement_type,Tg_C,uncertainty_C,cure_percent,conditions_notes,source_id
+REF_DDS_MDPI_181,SYS_DDS_LIVRAGHI,DGEBA/DDS,literature_experiment,181,,,Different conditions; not a molecular structure observation,SRC_MDPI
+REF_DDS_SUTER_189,SYS_DDS_LIVRAGHI,DGEBA/44DDS,literature_experiment_DMA,189.15,4.9,,Experimental DMA; comparison only,SRC_SUTER
+REF_DDS_ADHESIVE_206,SYS_DDS_LIVRAGHI,DGEBA/DDS,literature_experiment,206,,,Different formulation protocol; reference only,SRC_ADHESIVE
+REF_DDS_MD75_145,SYS_DDS_LIVRAGHI,DGEBA/DDS,literature_simulation,145,11,75,Published charged-model MD; not local MD observation,SRC_LIVRAGHI
+REF_ORSELLY_2022_FIG8,MULTIPLE_EPOXY_AMINE_SYSTEMS,Multiple epoxy–amine systems,literature_MD_vs_experiment_benchmark_figure,,,,"Orselly et al. Figure 8, https://doi.org/10.1021/acsomega.2c03071 . No individual Tg values digitized; comparison only, never BO label.",SRC_ORSELLY_2022_FIG8

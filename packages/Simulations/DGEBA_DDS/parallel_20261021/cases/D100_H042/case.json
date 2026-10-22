@@ -1,0 +1,27 @@
+{
+  "array_index": 2,
+  "formulation_id": "D100_H042",
+  "DGEBA_molecules": 100,
+  "DDS_molecules": 42,
+  "atoms": 6118,
+  "epoxy_groups": 200,
+  "amine_hydrogens": 168,
+  "amine_epoxy_ratio": 0.84,
+  "maximum_epoxy_conversion_percent": 84.0,
+  "target_limiting_reagent_conversion_percent": 90,
+  "required_reactions": 152,
+  "target_epoxy_conversion_percent": 75.6,
+  "source_replica": 1,
+  "seed": 4928459,
+  "initial_net_charge_e": 1.0241807402167069e-14,
+  "initial_density_g_cm3": 0.9513095562282629,
+  "minimum_image_bond_length_A": [
+    1.0430311596496065,
+    1.8094700881749886
+  ],
+  "data_sha256": "2f58a206c8e142c00ca1288bfe22e6c0c67d8226f54ca5df6ee3c6cecb3e7a85",
+  "retained_physical_atom_properties_unchanged": true,
+  "whole_molecule_selection_verified": true,
+  "bo_eligible": false,
+  "note": "Single realization per composition. Conversion differs with stoichiometry; retain it alongside Tg."
+}

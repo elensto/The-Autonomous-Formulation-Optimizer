@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+runs/*
+!runs/demo/
+!runs/demo_console_log.txt

@@ -1,0 +1,34 @@
+# Fixed-topology NPT at 503 K/1 atm after the structural cure gate.
+variable equil_steps index 2000000
+units real
+atom_style full
+boundary p p p
+bond_style harmonic
+angle_style harmonic
+dihedral_style harmonic
+pair_style lj/cut/coul/long 10.0
+pair_modify mix arithmetic
+special_bonds amber
+kspace_style pppm 1e-4
+read_data final.cure.data
+timestep 1.0
+reset_timestep 0
+variable rho equal density
+variable vspec equal 1.0/density
+variable e equal pe/atoms
+variable t equal temp
+variable p equal press
+compute qa all property/atom q
+compute qs all reduce sum c_qa
+thermo 10000
+thermo_style custom step time temp press density vol pe etotal c_qs
+thermo_modify flush yes
+fix eq all npt temp 503.0 503.0 100.0 iso 1.0 1.0 1000.0
+fix sample all ave/time 100 1 100 v_rho v_vspec v_e v_t v_p c_qs file equilibrium.dat
+restart 100000 equilibrium.a.restart equilibrium.b.restart
+run ${equil_steps}
+unfix sample
+unfix eq
+write_restart equilibrium.restart
+write_data equilibrium.data
+print "EQUILIBRATION_RUN_COMPLETED: stationarity still requires analysis"

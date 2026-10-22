@@ -1,0 +1,15 @@
+{
+  "mode": "composition",
+  "n_approved_observations": 0,
+  "n_distinct_training_points": 0,
+  "n_candidates_eligible": 18,
+  "target_C": [
+    150.0,
+    220.0
+  ],
+  "source_mode": "real_MD_only",
+  "reason": "Only 0 distinct approved training points; require 4 for exploratory GP fit",
+  "status": "OK",
+  "method": "diversity_exploration",
+  "n_selected": 3
+}

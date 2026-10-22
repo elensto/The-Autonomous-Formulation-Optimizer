@@ -1,0 +1,4 @@
+candidate_id,structure_id,n_DGEBA,n_DDS,ratio,conversion_pct,structure_status,file_path,physcheck_decision,job_status,request_type,source_type,predicted_tg_C,tg_predictive_sd_C,p_tg_in_window,selection_method,proposed_job_type,tg_target_min_C,tg_target_max_C,proposal_status
+DDS_N100_H50_A075,,100,50,1.0,75,NEEDS_NETWORK_GENERATION,,NOT_EVALUATED,not_started,generate_and_cure_network,proposed_design_not_observation,,,,diversity_exploration,generate_and_cure_network,150.0,220.0,proposed_not_executed
+DDS_N100_H40_A060,,100,40,0.8,60,NEEDS_NETWORK_GENERATION,,NOT_EVALUATED,not_started,generate_and_cure_network,proposed_design_not_observation,,,,diversity_exploration,generate_and_cure_network,150.0,220.0,proposed_not_executed
+DDS_N100_H60_A060,,100,60,1.2,60,NEEDS_NETWORK_GENERATION,,NOT_EVALUATED,not_started,generate_and_cure_network,proposed_design_not_observation,,,,diversity_exploration,generate_and_cure_network,150.0,220.0,proposed_not_executed

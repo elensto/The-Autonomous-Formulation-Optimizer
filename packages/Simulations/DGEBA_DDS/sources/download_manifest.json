@@ -1,0 +1,46 @@
+{
+  "record": 7273800,
+  "doi": "10.1021/acs.jpcb.3c04724",
+  "files": [
+    {
+      "file": "amberLib.zip",
+      "bytes": 66098,
+      "source_url": "https://zenodo.org/api/records/7273800/files/amberLib.zip/content",
+      "zenodo_checksum": "md5:10d099be414e49d5ed262ab1d94d27bb",
+      "sha256": "e1d3da3c3cf20bf6b1407a94cdf90fabb874219704c624cc6bbb90e85327000a"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3725,
+      "source_url": "https://zenodo.org/api/records/7273800/files/README.md/content",
+      "zenodo_checksum": "md5:267d9340d65c8ee8b9b714665f21283c",
+      "sha256": "91c41d0ede964007f5cfc23d0e326b7307a0b1dee3a46123f2a59611d4756285"
+    },
+    {
+      "file": "curingReaction.zip",
+      "bytes": 28011,
+      "source_url": "https://zenodo.org/api/records/7273800/files/curingReaction.zip/content",
+      "zenodo_checksum": "md5:8feeed18f61426d9024713d8a3f71d70",
+      "sha256": "e975367b513ead26c08ded00b8abb9933b137fc83067aee140e288e9c2a7ba2e"
+    },
+    {
+      "file": "lammps_noCharge.zip",
+      "bytes": 13688400,
+      "source_url": "https://zenodo.org/api/records/7273800/files/lammps_noCharge.zip/content",
+      "zenodo_checksum": "md5:68882aa75cd36ae36096e51406d3d22b",
+      "sha256": "04a0e8d0bed3c8ddf2ca894e69ed671a6671e028729df30cb157421caceb5cff"
+    },
+    {
+      "file": "lammps.zip",
+      "bytes": 45472056,
+      "source_url": "https://zenodo.org/api/records/7273800/files/lammps.zip/content",
+      "zenodo_checksum": "md5:c24d2f4e6fb472d364120ffa42dc7a81",
+      "sha256": "bb0112be6f20acfd92e65dfddb89c8880b5fdebae39d4189667cca5878adf8af"
+    },
+    {
+      "file": "Livraghi_2023_Block_Chemistry.pdf",
+      "sha256": "a061cb2a7c8e0121ca82f41f47f9b7c0d7c5d354452a12fd92d5d13f5e29af0b",
+      "source_url": "https://fulir.irb.hr/8699/1/livraghi-et-al-2023-block-chemistry-for-accurate-modeling-of-epoxy-resins.pdf"
+    }
+  ]
+}

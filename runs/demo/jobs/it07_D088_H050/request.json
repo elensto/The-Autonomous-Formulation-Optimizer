@@ -1,0 +1,20 @@
+{
+  "job_id": "it07_D088_H050",
+  "formulation_id": "D088_H050",
+  "n_DGEBA": 88,
+  "n_DDS": 50,
+  "ratio": 1.1363636363636365,
+  "target_epoxy_conversion_pct": 90.0,
+  "atoms": 5762,
+  "array_index": 21,
+  "structure_sha256": "5c652172f3d0be5ae8c7dd4e9ad0b3ba93fff8c1addf155718d43f7c517c7382",
+  "protocol": "Livraghi AMBER-style FF; cure 2x2 ns @503 K (90% of limiting reagent); NPT 2 ns @503 K; 26 plateaus 800->300 K, 50+50 ps each",
+  "engine": "LAMMPS (fix bond/react) classical",
+  "stages": [
+    "prepare",
+    "cure",
+    "equilibrate",
+    "tg_screen"
+  ],
+  "created_utc": "2026-10-22T18:50:48+00:00"
+}
