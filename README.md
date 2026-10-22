@@ -1,7 +1,8 @@
-# The Autonomous Formulation Optimizer
+# Glass Act: Autonomous Formulation Optimizer
 
 *A closed-loop workflow that proposes epoxy formulations, checks their chemistry, evaluates molecular-dynamics results, and learns which formulation to try next.*
 
+**Team:** Deck-group  
 Built for the [LLM Hackathon for Applications in Materials & Chemistry 2026](https://llmhackathon.github.io/).
 
 ## Goal
@@ -66,6 +67,12 @@ Package-specific tests are available under `packages/BO/` and `packages/Agents/`
 - **Only 8 measured formulations:** the GP demonstrates the learning architecture, not a validated predictive model.
 
 Next: simulate the remaining 15 formulations, add network replicas, extend the component library, and explore MLIP validation and LLM-assisted failure analysis.
+
+## Team — Deck-group
+
+Developed collaboratively by the **Deck-group** team. Contributions include Bayesian optimization (`packages/BO/`), experiment agents and physics validation (`packages/Agents/`), molecular-dynamics simulations (`packages/Simulations/`), and workflow integration.
+
+**Team members:** Arthur da Silva Sousa Santos; Adib Bazgir; Elena Stojanovska; Nannan Zhang; Xiaoli Yan; Matheus Rodrigues de Amorim Medina
 
 ## Credits
 
