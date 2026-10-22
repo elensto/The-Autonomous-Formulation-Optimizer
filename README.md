@@ -68,7 +68,7 @@ Package-specific tests are available under `packages/BO/` and `packages/Agents/`
 
 Next: simulate the remaining 15 formulations, add network replicas, extend the component library, and explore MLIP validation and LLM-assisted failure analysis.
 
-## Team — Deck-group
+## Team — Deck
 
 Developed collaboratively by the **Deck-group** team. Contributions include Bayesian optimization (`packages/BO/`), experiment agents and physics validation (`packages/Agents/`), molecular-dynamics simulations (`packages/Simulations/`), and workflow integration.
 
